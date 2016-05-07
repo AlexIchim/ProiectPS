@@ -1,0 +1,57 @@
+﻿@model IEnumerable<WebApplication3.Models.EventModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.EventTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDirector)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventDistribution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventTickets)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventReleaseDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventTitle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDirector)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventDistribution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventTickets)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventReleaseDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.EventID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.EventID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.EventID })
+        </td>
+    </tr>
+}
+
+</table>
