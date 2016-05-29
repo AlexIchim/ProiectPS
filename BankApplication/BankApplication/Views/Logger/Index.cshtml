@@ -1,0 +1,45 @@
+﻿@model IEnumerable<BankApplication.Models.LoggerModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.userNameLog)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.transactionLog)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateLog)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.userNameLog)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.transactionLog)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateLog)
+        </td>
+        <td>
+            @Html.ActionLink("ExportCSV", "Edit", new { id=item.LogID }) |
+            @Html.ActionLink("ExportJSON", "Details", new { id=item.LogID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LogID })
+        </td>
+    </tr>
+}
+
+</table>

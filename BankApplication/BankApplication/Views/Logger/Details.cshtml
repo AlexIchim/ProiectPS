@@ -1,0 +1,42 @@
+﻿@model BankApplication.Models.LoggerModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>LoggerModel</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.userNameLog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.userNameLog)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.transactionLog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.transactionLog)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dateLog)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dateLog)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.LogID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
